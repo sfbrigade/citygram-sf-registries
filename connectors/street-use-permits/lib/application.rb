@@ -9,7 +9,8 @@ require 'json'
 $cache = HashCache.new
 
 get '/street-use-permits' do
-  url = URI('http://data.sfgov.org/resource/b6tj-gt35.json')
+  url = URI(StreetUsePermit::SOCRATA_ENDPOINT)
+
   url.query = Faraday::Utils.build_query(
 	  '$order' => 'approved_date DESC',
 	  '$limit' => 100,

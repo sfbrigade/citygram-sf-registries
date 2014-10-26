@@ -1,4 +1,5 @@
 class StreetUsePermit
+  SOCRATA_ENDPOINT = 'http://data.sfgov.org/resource/b6tj-gt35.json'
 
 TITLE_TEMPLATE = <<-CFA.gsub(/\s*\n/,' ').chomp(' ')
 A new permit has been issued for %{permit_type}, at %{streetname}
