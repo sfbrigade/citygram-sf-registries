@@ -12,6 +12,12 @@ CFA
     @cache = cache
   end
 
+  def titleize(str)
+    str.gsub(/\b([A-Za-z])+|\b\d+[A-Za-z]{2}\b/) do |match|
+      "#{match[0].upcase}#{match[1..-1].downcase}"
+    end
+  end
+
   def date_cleanup(date_str)
     date_str.gsub!(/T[\d\:]+$/,'')
     Time.parse(date_str).strftime("%b %e, %Y")
@@ -22,9 +28,9 @@ CFA
     # title "mad lib" above.
     title_pieces = {
       :permit_type => @record['permit_type'],
-      :streetname => @record['streetname'].titleize,
-      :cross_street_1 => @record['cross_street_1'].titleize,
-      :cross_street_2 => @record['cross_street_2'].titleize,
+      :streetname => titleize(@record['streetname']),
+      :cross_street_1 => titleize(@record['cross_street_1']),
+      :cross_street_2 => titleize(@record['cross_street_2']),
       :permit_start_date => date_cleanup(@record['permit_start_date']),
       :permit_end_date => date_cleanup(@record['permit_end_date'])
     }

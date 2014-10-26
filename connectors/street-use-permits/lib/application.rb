@@ -1,5 +1,4 @@
 require File.join(File.dirname(__FILE__), 'hash_cache')
-require File.join(File.dirname(__FILE__), 'core_ext', 'string')
 require File.join(File.dirname(__FILE__), 'street_use_permit')
 require 'faraday'
 require 'sinatra'
@@ -28,8 +27,10 @@ get '/street-use-permits' do
   # Query the data.sfgov.org endpoint
   response = connection.get
 
+  # Parse the json response
   collection = JSON.parse(response.body)
 
+  # Build our features
   features = collection.map do |record|
     StreetUsePermit.new(record, $cache).as_geojson_feature
   end
