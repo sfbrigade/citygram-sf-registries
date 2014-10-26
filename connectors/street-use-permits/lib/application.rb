@@ -23,7 +23,7 @@ get '/street-use-permits' do
 	  " AND approved_date > '#{(DateTime.now - 7).iso8601}'"
   )
 
-  connection = Faraday.new(url: url.to_s)
+  connection = Faraday.new(:url => url.to_s)
 
   # Query the data.sfgov.org endpoint
   response = connection.get
