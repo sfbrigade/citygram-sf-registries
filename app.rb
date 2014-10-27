@@ -2,6 +2,12 @@ require 'faraday'
 require 'sinatra'
 require 'json'
 
+get '/' do
+	content_type :html
+	response = request.url + 'tree-planting <br/>'
+	response << request.url + 'tow-away-zones'
+end
+
 get '/tree-planting' do
   url = URI('http://data.sfgov.org/resource/tkzw-k3nq.json')
   url.query = Faraday::Utils.build_query(
@@ -34,10 +40,6 @@ get '/tree-planting' do
   content_type :json
   JSON.pretty_generate('type' => 'FeatureCollection', 'features' => features)
 end
-
-require 'faraday'
-require 'sinatra'
-require 'json'
 
 get '/tow-away-zones' do
   url = URI('http://data.sfgov.org/resource/cqn5-muyy.json')
