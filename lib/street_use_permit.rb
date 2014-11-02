@@ -1,12 +1,15 @@
 class StreetUsePermit
   SOCRATA_ENDPOINT = 'http://data.sfgov.org/resource/b6tj-gt35.json'
 
+# Text from https://github.com/citygram/citygram-services/issues/24
 TITLE_TEMPLATE = <<-CFA.gsub(/\s*\n/,' ').chomp(' ')
 A new permit has been issued for %{permit_type}, at %{streetname}
 between %{cross_street_1} and %{cross_street_2}, from %{permit_start_date}
 to %{permit_end_date}.
 CFA
 
+  # Build the url to the socrata endpoint in a class methods so that all of
+  # the street use permit business logic is in one place.
   def self.query_url
     url = URI(SOCRATA_ENDPOINT)
 
@@ -29,12 +32,14 @@ CFA
     @cache = cache
   end
 
+  # Poor man's titlecase (without including active_support)
   def titleize(str)
     str.gsub(/\b([A-Za-z])+|\b\d+[A-Za-z]{2}\b/) do |match|
       "#{match[0].upcase}#{match[1..-1].downcase}"
     end
   end
 
+  # Helper method to make the dates look nice in the "fancy title".
   def date_cleanup(date_str)
     date_str.gsub!(/T[\d\:]+$/,'')
     Time.parse(date_str).strftime("%b %e, %Y")
@@ -55,6 +60,9 @@ CFA
     TITLE_TEMPLATE % title_pieces
   end
 
+  # If socrata gives us a 'permit_address', use it for the geocoding. If there
+  # isn't one, then use the intersection of 'streetname' and 'cross_street_1'.
+  # Either way, add "San Francisco, CA" to the end.
   def address_to_geocode
     @address_to_geocode ||= [
       @record.has_key?('permit_address') ? @record['permit_address'] : [@record['streetname'], @record['cross_street_1']].join(' and '),
