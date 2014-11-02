@@ -72,6 +72,10 @@ CFA
   end
 
   def as_geojson_feature
+    # We're trying to return geojson records, so return nil if
+    # we don't have a location.
+    return nil if location.nil?
+
     # Return the feature as a hash, which we will convert to json.
     {
       'id' => @record['permit_number'],
