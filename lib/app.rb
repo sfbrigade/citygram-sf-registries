@@ -5,7 +5,9 @@ require 'sinatra'
 require 'geocoder'
 require 'json'
 
-Geocoder.configure(:always_raise => [Geocoder::OverQueryLimitError])
+Geocoder.configure({
+  :always_raise => [Geocoder::OverQueryLimitError],
+})
 
 get '/' do
 	content_type :html
@@ -97,11 +99,13 @@ get '/street-use-permits' do
     # Build our features
     features = collection.map do |record|
       StreetUsePermit.new(record, geocoder_cache).as_geojson_feature
-    end
+    end.compact
+
+    content_type :json
+    JSON.pretty_generate('type' => 'FeatureCollection', 'features' => features)
+
   rescue Geocoder::OverQueryLimitError => e
-    features = { :error => e.message }
+    [503, "Error with geocoding service"]
   end
 
-  content_type :json
-  JSON.pretty_generate('type' => 'FeatureCollection', 'features' => features)
 end
