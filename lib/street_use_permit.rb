@@ -7,6 +7,23 @@ between %{cross_street_1} and %{cross_street_2}, from %{permit_start_date}
 to %{permit_end_date}.
 CFA
 
+  def self.query_url
+    url = URI(SOCRATA_ENDPOINT)
+
+    url.query = Faraday::Utils.build_query(
+      '$order' => 'approved_date DESC',
+      '$limit' => 100,
+      '$where' => "permit_type IS NOT NULL"+
+      " AND streetname IS NOT NULL"+
+      " AND cross_street_1 IS NOT NULL"+
+      " AND cross_street_2 IS NOT NULL"+
+      " AND permit_start_date IS NOT NULL"+
+      " AND permit_end_date IS NOT NULL"+
+      " AND approved_date > '#{(DateTime.now - 7).iso8601}'"
+    )
+    url.to_s
+  end
+
   def initialize(record, cache)
     @record = record
     @cache = cache
