@@ -1,4 +1,5 @@
 class HashCache
+  attr_reader :cache
 
   def initialize
     @cache = {}
