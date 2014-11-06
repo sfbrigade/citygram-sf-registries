@@ -1,6 +1,13 @@
+require File.join(File.dirname(__FILE__), 'hash_cache')
+require File.join(File.dirname(__FILE__), 'street_use_permit')
 require 'faraday'
 require 'sinatra'
+require 'geocoder'
 require 'json'
+
+Geocoder.configure({
+  :always_raise => [Geocoder::OverQueryLimitError],
+})
 
 get '/' do
 	content_type :html
@@ -76,4 +83,29 @@ get '/tow-away-zones' do
 
   content_type :json
   JSON.pretty_generate('type' => 'FeatureCollection', 'features' => features)
+end
+
+geocoder_cache = HashCache.new
+
+get '/street-use-permits' do
+  connection = Faraday.new(:url => StreetUsePermit.query_url)
+
+  begin
+    # Query the data.sfgov.org endpoint
+    response = connection.get
+    # Parse the json response
+    collection = JSON.parse(response.body)
+
+    # Build our features
+    features = collection.map do |record|
+      StreetUsePermit.new(record, geocoder_cache).as_geojson_feature
+    end.compact
+
+    content_type :json
+    JSON.pretty_generate('type' => 'FeatureCollection', 'features' => features)
+
+  rescue Geocoder::OverQueryLimitError => e
+    [503, "Error with geocoding service"]
+  end
+
 end
