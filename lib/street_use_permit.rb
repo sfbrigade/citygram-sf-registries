@@ -3,7 +3,7 @@ class StreetUsePermit
 
 # Text from https://github.com/citygram/citygram-services/issues/24
 TITLE_TEMPLATE = <<-CFA.gsub(/\s*\n/,' ').chomp(' ')
-A new permit has been issued for %{permit_type}, at %{streetname}
+A permit has been issued for %{permit_type}, at %{streetname}
 between %{cross_street_1} and %{cross_street_2}, from %{permit_start_date}
 to %{permit_end_date}.
 CFA
@@ -42,7 +42,7 @@ CFA
   # Helper method to make the dates look nice in the "fancy title".
   def date_cleanup(date_str)
     date_str.gsub!(/T[\d\:]+$/,'')
-    Time.parse(date_str).strftime("%b %e, %Y")
+    Time.parse(date_str).strftime("%b %-e, %Y")
   end
 
   def fancy_title
@@ -66,7 +66,7 @@ CFA
   def address_to_geocode
     @address_to_geocode ||= [
       @record.has_key?('permit_address') ? @record['permit_address'] : [@record['streetname'], @record['cross_street_1']].join(' and '),
-      ", San Franciso, CA"
+      ", San Francisco, CA"
     ].join
   end
 
