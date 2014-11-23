@@ -2,6 +2,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib', 'app.rb')
 
 require 'sinatra'
 require 'rack/test'
+require 'vcr'
 
 # setup test environment
 set :environment, :test
@@ -12,6 +13,13 @@ set :logging, false
 def app
   Sinatra::Application
 end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock
+  c.debug_logger
+end
+
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
