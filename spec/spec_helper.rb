@@ -1,8 +1,10 @@
 require File.join(File.dirname(__FILE__), '..', 'lib', 'app.rb')
-
 require 'sinatra'
 require 'rack/test'
 require 'vcr'
+
+# Require any support files (i.e. custom matchers)
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each{ |f| require f }
 
 # setup test environment
 set :environment, :test
@@ -23,4 +25,5 @@ end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include CustomJsonMatchers
 end
