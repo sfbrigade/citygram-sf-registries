@@ -15258,4 +15258,651 @@ http_interactions:
          ]
     http_version: 
   recorded_at: Sat, 29 Nov 2014 18:10:51 GMT
+- request:
+    method: get
+    uri: http://data.sfgov.org/resource/b6tj-gt35.json?$limit=100&$order=approved_date%20DESC&$where=permit_type%20IS%20NOT%20NULL%20AND%20streetname%20IS%20NOT%20NULL%20AND%20cross_street_1%20IS%20NOT%20NULL%20AND%20cross_street_2%20IS%20NOT%20NULL%20AND%20permit_start_date%20IS%20NOT%20NULL%20AND%20permit_end_date%20IS%20NOT%20NULL%20AND%20approved_date%20%3E%20'2014-11-22T10:16:26-08:00'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 29 Nov 2014 18:16:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Last-Modified:
+      - Sat, 29 Nov 2014 16:33:07 UTC
+      X-Soda2-Warning:
+      - X-SODA2-Fields, X-SODA2-Types, and X-SODA2-Legacy-Types are deprecated
+      X-Soda2-Fields:
+      - '["permit_address","permit_type",":updated_at","inspector","status","permit_start_date","permit_purpose","contact","agent","cnn","cross_street_2","cross_street_1","permit_zipcode","permit_number","agentphone","approved_date",":id",":created_at","permit_end_date","streetname"]'
+      X-Soda2-Types:
+      - '["text","text","meta_data","text","text","calendar_date","text","text","text","number","text","text","number","text","text","calendar_date","meta_data","meta_data","calendar_date","text"]'
+      X-Soda2-Legacy-Types:
+      - 'true'
+      X-Socrata-Region:
+      - production
+      Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "permit_address" : "694 VALENCIA ST",
+          "permit_type" : "TableChair",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "permit_purpose" : "tables and chairs",
+          "contact" : "Refer to Agent",
+          "agent" : "Luna Park",
+          "cross_street_2" : "18TH ST",
+          "cnn" : "13063000",
+          "cross_street_1" : "SYCAMORE ST",
+          "permit_number" : "14TC-0566",
+          "permit_zipcode" : "94110",
+          "agentphone" : "415-553-8584",
+          "approved_date" : "2014-11-26T16:16:44",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "VALENCIA ST"
+        }
+        , {
+          "permit_address" : "2848 MISSION ST",
+          "permit_type" : "Display",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "permit_purpose" : "Non-food produce (Flowers, plants, etc.)",
+          "contact" : "Refer to Agent",
+          "agent" : "FLORERIA LA POBLANITA",
+          "cross_street_2" : "25TH ST",
+          "cnn" : "9126000",
+          "cross_street_1" : "24TH ST",
+          "permit_number" : "14D-0364",
+          "permit_zipcode" : "94110",
+          "agentphone" : "(415) 559-2259",
+          "approved_date" : "2014-11-25T13:41:31",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "MISSION ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "inspector" : "Melinda Hespen",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-25T00:00:00",
+          "permit_purpose" : "Clay, Cherry and Collins Streets Sewer Replacement, Water Main Installation and Pavement Renovation(Contract No. WW-552R) (Additional work at the intersection of Spruce St. & Sacramento St. & adjacent streets.)",
+          "contact" : "(415) 740-8008",
+          "agent" : "Shaw Pipeline Inc.",
+          "cross_street_2" : "SPRUCE ST",
+          "cnn" : "11268000",
+          "cross_street_1" : "LOCUST ST",
+          "permit_number" : "14EXC-6730",
+          "permit_zipcode" : "94118",
+          "agentphone" : "(415) 740 8008",
+          "approved_date" : "2014-11-25T11:08:22",
+          "permit_end_date" : "2015-03-18T00:00:00",
+          "streetname" : "SACRAMENTO ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "inspector" : "Melinda Hespen",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-25T00:00:00",
+          "permit_purpose" : "Clay, Cherry and Collins Streets Sewer Replacement, Water Main Installation and Pavement Renovation(Contract No. WW-552R) (Additional work at the intersection of Spruce St. & Sacramento St. & adjacent streets.)",
+          "contact" : "(415) 740-8008",
+          "agent" : "Shaw Pipeline Inc.",
+          "cross_street_2" : "MAPLE ST",
+          "cnn" : "11269000",
+          "cross_street_1" : "SPRUCE ST",
+          "permit_number" : "14EXC-6730",
+          "permit_zipcode" : "94118",
+          "agentphone" : "(415) 740 8008",
+          "approved_date" : "2014-11-25T11:08:22",
+          "permit_end_date" : "2015-03-18T00:00:00",
+          "streetname" : "SACRAMENTO ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "inspector" : "Melinda Hespen",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-25T00:00:00",
+          "permit_purpose" : "Clay, Cherry and Collins Streets Sewer Replacement, Water Main Installation and Pavement Renovation(Contract No. WW-552R) (Additional work at the intersection of Spruce St. & Sacramento St. & adjacent streets.)",
+          "contact" : "(415) 740-8008",
+          "agent" : "Shaw Pipeline Inc.",
+          "cross_street_2" : "CALIFORNIA ST",
+          "cnn" : "12061000",
+          "cross_street_1" : "SACRAMENTO ST",
+          "permit_number" : "14EXC-6730",
+          "permit_zipcode" : "94118",
+          "agentphone" : "(415) 740 8008",
+          "approved_date" : "2014-11-25T11:08:22",
+          "permit_end_date" : "2015-03-18T00:00:00",
+          "streetname" : "SPRUCE ST"
+        }
+        , {
+          "permit_address" : "1000 CLEMENT ST",
+          "permit_type" : "TableChair",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2015-01-16T00:00:00",
+          "permit_purpose" : "Table and Chair on Clement Street.",
+          "contact" : "Refer to Agent",
+          "agent" : "The Clay Pot House LLC",
+          "cross_street_2" : "12TH AVE",
+          "cnn" : "4160000",
+          "cross_street_1" : "11TH AVE",
+          "permit_number" : "14TC-0563",
+          "permit_zipcode" : "94118",
+          "agentphone" : "415 608 8078",
+          "approved_date" : "2014-11-25T10:39:48",
+          "permit_end_date" : "2016-01-15T00:00:00",
+          "streetname" : "CLEMENT ST"
+        }
+        , {
+          "permit_address" : "968 VALENCIA ST",
+          "permit_type" : "TableChair",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "contact" : "Refer to Agent",
+          "agent" : "THE CREEK CAFE",
+          "cross_street_2" : "21ST ST",
+          "cnn" : "13068000",
+          "cross_street_1" : "LIBERTY ST",
+          "permit_number" : "14TC-0559",
+          "permit_zipcode" : "94110",
+          "agentphone" : "(415) 641-0888",
+          "approved_date" : "2014-11-25T10:27:09",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "VALENCIA ST"
+        }
+        , {
+          "permit_type" : "NightNoise",
+          "status" : "ACTIVE",
+          "permit_start_date" : "2014-11-25T00:00:00",
+          "permit_purpose" : "Horizontal directional drill pullback of HDPE pipe",
+          "contact" : "(916) 716-5576",
+          "agent" : "Black and Veatch Construction, Inc.",
+          "cross_street_2" : "END",
+          "cnn" : "12048000",
+          "cross_street_1" : "HARRISON ST",
+          "permit_number" : "14N-0291",
+          "permit_zipcode" : "94105",
+          "agentphone" : "(510) 264-9360",
+          "approved_date" : "2014-11-25T08:46:39",
+          "permit_end_date" : "2014-11-27T00:00:00",
+          "streetname" : "SPEAR ST"
+        }
+        , {
+          "permit_address" : "1201 SOUTH VAN NESS AVE",
+          "permit_type" : "Display",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "permit_purpose" : "Fruits and vegetables",
+          "contact" : "Refer to Agent",
+          "agent" : "New Casa Maria",
+          "cross_street_2" : "24TH ST",
+          "cnn" : "12030000",
+          "cross_street_1" : "23RD ST",
+          "permit_number" : "14D-0360",
+          "permit_zipcode" : "94110",
+          "agentphone" : "(415) 550-6892",
+          "approved_date" : "2014-11-25T08:30:51",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "SOUTH VAN NESS AVE"
+        }
+        , {
+          "permit_address" : "2298 MISSION ST",
+          "permit_type" : "Display",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "permit_purpose" : "FRUITS AND VEGETABLES",
+          "contact" : "Refer to Agent",
+          "agent" : "CITY DISCOUNT MEAT & GROCERY MARKET",
+          "cross_street_2" : "19TH ST",
+          "cnn" : "9120000",
+          "cross_street_1" : "18TH ST",
+          "permit_number" : "14D-0349",
+          "permit_zipcode" : "94110",
+          "agentphone" : "(415) 431-6828",
+          "approved_date" : "2014-11-25T08:19:25",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "MISSION ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "inspector" : "Jonathan Vaing",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-28T00:00:00",
+          "permit_purpose" : "837 south van ness av",
+          "contact" : "Refer to Agent 550-4900",
+          "agent" : "San Francisco Water Department",
+          "cross_street_2" : "20TH ST",
+          "cnn" : "12026000",
+          "cross_street_1" : "19TH ST",
+          "permit_number" : "14EXC-6696",
+          "permit_zipcode" : "94110",
+          "agentphone" : "550-4928",
+          "approved_date" : "2014-11-24T14:41:16",
+          "permit_end_date" : "2015-01-11T00:00:00",
+          "streetname" : "SOUTH VAN NESS AVE"
+        }
+        , {
+          "permit_address" : "965 SUTTER ST",
+          "permit_type" : "TableChair",
+          "inspector" : "Mari Anderson",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "contact" : "Refer to Agent",
+          "agent" : "Cozy Cafe",
+          "cross_street_2" : "HYDE ST",
+          "cnn" : "12327000",
+          "cross_street_1" : "LEAVENWORTH ST",
+          "permit_number" : "14TC-0507",
+          "permit_zipcode" : "94109",
+          "agentphone" : "415-922-4826",
+          "approved_date" : "2014-11-24T14:26:55",
+          "permit_end_date" : "2015-10-15T00:00:00",
+          "streetname" : "SUTTER ST"
+        }
+        , {
+          "permit_address" : "720 MARKET ST",
+          "permit_type" : "TableChair",
+          "inspector" : "Mari Anderson",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "contact" : "Refer to Agent",
+          "agent" : "Mazarine Coffee, LLC",
+          "cross_street_2" : "GRANT AVE \\ OFARRELL ST",
+          "cnn" : "8745201",
+          "cross_street_1" : "03RD ST \\ KEARNY ST",
+          "permit_number" : "14TC-0393",
+          "permit_zipcode" : "94102",
+          "agentphone" : "408-209-3771",
+          "approved_date" : "2014-11-24T12:30:47",
+          "permit_end_date" : "2015-03-15T00:00:00",
+          "streetname" : "MARKET ST"
+        }
+        , {
+          "permit_address" : "2286 MISSION ST",
+          "permit_type" : "Display",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "permit_purpose" : "to display phone chargers, mini speakers, jewelery and perfumes",
+          "contact" : "Refer to Agent",
+          "agent" : "Alicia Eleuterio",
+          "cross_street_2" : "19TH ST",
+          "cnn" : "9120000",
+          "cross_street_1" : "18TH ST",
+          "permit_number" : "14D-0363",
+          "permit_zipcode" : "94110",
+          "agentphone" : "415-573-4696",
+          "approved_date" : "2014-11-24T11:20:31",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "MISSION ST"
+        }
+        , {
+          "permit_address" : "5229 MISSION ST",
+          "permit_type" : "Display",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "permit_purpose" : "VEGETABLES AND FRUITS",
+          "contact" : "Refer to Agent",
+          "agent" : "GUZMAN'S PRODUCE MARKET",
+          "cross_street_2" : "ALLISON ST",
+          "cnn" : "9181000",
+          "cross_street_1" : "POPE ST",
+          "permit_number" : "14D-0362",
+          "permit_zipcode" : "94112",
+          "agentphone" : "(415) 585-4092",
+          "approved_date" : "2014-11-24T11:01:36",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "MISSION ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-28T00:00:00",
+          "permit_purpose" : "33 5th av",
+          "contact" : "Refer to Agent 550-4900",
+          "agent" : "San Francisco Water Department",
+          "cross_street_2" : "LAKE ST",
+          "cnn" : "275000",
+          "cross_street_1" : "END",
+          "permit_number" : "14EXC-6691",
+          "permit_zipcode" : "94118",
+          "agentphone" : "550-4928",
+          "approved_date" : "2014-11-24T10:38:43",
+          "permit_end_date" : "2015-01-11T00:00:00",
+          "streetname" : "05TH AVE"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "inspector" : "Michael Pavich",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-13T00:00:00",
+          "permit_purpose" : "207 Precita Ave",
+          "contact" : "800-743-5000",
+          "agent" : "Pacific Gas & Electric",
+          "cross_street_2" : "SHOTWELL ST",
+          "cnn" : "10741002",
+          "cross_street_1" : "EMMETT CT",
+          "permit_number" : "14EXC-6692",
+          "permit_zipcode" : "94110",
+          "agentphone" : "415-695-3592",
+          "approved_date" : "2014-11-24T10:12:23",
+          "permit_end_date" : "2014-12-27T00:00:00",
+          "streetname" : "PRECITA AVE"
+        }
+        , {
+          "permit_address" : "3248 22ND ST",
+          "permit_type" : "TableChair",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-16T00:00:00",
+          "permit_purpose" : "4 tables & 12 chairs occupying 60 SF Sunday - Thrusday from 9 AM to 11:30 PM and from 9 AM to 1:30 AM Friday and Saturday.",
+          "contact" : "Refer to Agent",
+          "agent" : "Revolution Cafe",
+          "cross_street_2" : "BARTLETT ST",
+          "cnn" : "1191000",
+          "cross_street_1" : "MISSION ST",
+          "permit_number" : "14TC-0561",
+          "permit_zipcode" : "94110",
+          "agentphone" : "(415) 776-0233",
+          "approved_date" : "2014-11-24T09:40:04",
+          "permit_end_date" : "2015-11-15T00:00:00",
+          "streetname" : "22ND ST"
+        }
+        , {
+          "permit_address" : "3249 SCOTT ST",
+          "permit_type" : "TableChair",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-20T00:00:00",
+          "contact" : "Refer to Agent",
+          "agent" : "Kara's Cupcakes",
+          "cross_street_2" : "CHESTNUT ST",
+          "cnn" : "11715000",
+          "cross_street_1" : "LOMBARD ST",
+          "permit_number" : "14TC-0341",
+          "permit_zipcode" : "94123",
+          "agentphone" : "415 999 7131",
+          "approved_date" : "2014-11-24T09:26:52",
+          "permit_end_date" : "2015-08-15T00:00:00",
+          "streetname" : "SCOTT ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-13T00:00:00",
+          "permit_purpose" : "6218 3rd St.",
+          "contact" : "800-743-5000",
+          "agent" : "Pacific Gas & Electric",
+          "cross_street_2" : "HOLLISTER AVE",
+          "cnn" : "228201",
+          "cross_street_1" : "GILMAN AVE \\ PAUL AVE",
+          "permit_number" : "14EXC-6694",
+          "permit_zipcode" : "94124",
+          "agentphone" : "415-695-3592",
+          "approved_date" : "2014-11-24T08:28:41",
+          "permit_end_date" : "2014-12-27T00:00:00",
+          "streetname" : "03RD ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-17T00:00:00",
+          "permit_purpose" : "208 Winfield St.",
+          "contact" : "800-743-5000",
+          "agent" : "Pacific Gas & Electric",
+          "cross_street_2" : "EUGENIA AVE",
+          "cnn" : "13679000",
+          "cross_street_1" : "VIRGINIA AVE",
+          "permit_number" : "14EXC-6698",
+          "permit_zipcode" : "94110",
+          "agentphone" : "415-695-3592",
+          "approved_date" : "2014-11-24T08:23:55",
+          "permit_end_date" : "2014-12-31T00:00:00",
+          "streetname" : "WINFIELD ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "inspector" : "Jonathan Vaing",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-29T00:00:00",
+          "permit_purpose" : "19 E/W FRANKLIN - 5 N/STARR KING ---PLEASE RENEW FOR CONSTRUCTION, SEE 14EXC-3927, SEE 14EXC-4739 PLEASE RENEW FOR FINAL PAVING",
+          "contact" : "Refer to Agent5504900",
+          "agent" : "San Francisco Water Department",
+          "cross_street_2" : "MYRTLE ST",
+          "cnn" : "5816000",
+          "cross_street_1" : "OFARRELL ST \\ STARR KING WAY",
+          "permit_number" : "14EXC-6705",
+          "permit_zipcode" : "94109",
+          "agentphone" : "(415) 550-4919",
+          "approved_date" : "2014-11-24T08:11:49",
+          "permit_end_date" : "2015-01-12T00:00:00",
+          "streetname" : "FRANKLIN ST"
+        }
+        , {
+          "permit_type" : "Excavation",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-29T00:00:00",
+          "permit_purpose" : "6 wec BOYLSTON - S/LINE HALE - PLEASE RENEW FOR CONSTRUCTION, SEE 14EXC-4276, See 14EXC-5216 PLEASE RENEW FOR FINAL PAVING",
+          "contact" : "Refer to Agent5504900",
+          "agent" : "San Francisco Water Department",
+          "cross_street_2" : "HOLYOKE ST \\ SILVER AVE",
+          "cnn" : "3057000",
+          "cross_street_1" : "HALE ST",
+          "permit_number" : "14EXC-6703",
+          "permit_zipcode" : "94134",
+          "agentphone" : "(415) 550-4919",
+          "approved_date" : "2014-11-24T08:06:15",
+          "permit_end_date" : "2015-01-12T00:00:00",
+          "streetname" : "BOYLSTON ST"
+        }
+        , {
+          "permit_address" : "529 LIBERTY ST",
+          "permit_type" : "Excavation",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-25T00:00:00",
+          "permit_purpose" : "Spot Sewer Replacement 31, WW-591, Work Order 3, Description 4, 529 Liberty St @ Noe & Castro",
+          "contact" : "Oscar Delgadillo @ 510-867-0073 & Inspector Jerry Rivera 415-500-1582",
+          "agent" : "J. Flores Construction Co.",
+          "cross_street_2" : "CASTRO ST",
+          "cnn" : "8328000",
+          "cross_street_1" : "NOE ST",
+          "permit_number" : "14EXC-6700",
+          "permit_zipcode" : "94114",
+          "agentphone" : "(415) 337-2934",
+          "approved_date" : "2014-11-24T07:44:45",
+          "permit_end_date" : "2014-12-08T00:00:00",
+          "streetname" : "LIBERTY ST"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "IRVING ST",
+          "cnn" : "161000",
+          "cross_street_1" : "HUGO ST",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "03RD AVE"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "PARNASSUS AVE",
+          "cnn" : "248000",
+          "cross_street_1" : "IRVING ST",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "04TH AVE"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "JUDAH ST \\ PARNASSUS AVE",
+          "cnn" : "286000",
+          "cross_street_1" : "IRVING ST",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "05TH AVE"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "JUDAH ST",
+          "cnn" : "323000",
+          "cross_street_1" : "IRVING ST",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "06TH AVE"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "03RD AVE",
+          "cnn" : "7279000",
+          "cross_street_1" : "02ND AVE",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "IRVING ST"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "04TH AVE",
+          "cnn" : "7280000",
+          "cross_street_1" : "03RD AVE",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "IRVING ST"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "05TH AVE",
+          "cnn" : "7281000",
+          "cross_street_1" : "04TH AVE",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "IRVING ST"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "06TH AVE",
+          "cnn" : "7282000",
+          "cross_street_1" : "05TH AVE",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "IRVING ST"
+        }
+        , {
+          "permit_address" : "134 IRVING ST",
+          "permit_type" : "Excavation",
+          "inspector" : "Ray Oropeza",
+          "status" : "APPROVED",
+          "permit_start_date" : "2014-11-24T00:00:00",
+          "permit_purpose" : "N-Line Sunset Tunnel Trackway Improvement Project",
+          "contact" : "415-747-2238",
+          "agent" : "Maloney Construction, Inc.",
+          "cross_street_2" : "07TH AVE",
+          "cnn" : "7283000",
+          "cross_street_1" : "06TH AVE",
+          "permit_number" : "14EXC-6701",
+          "permit_zipcode" : "94122",
+          "agentphone" : "(415) 895-5304",
+          "approved_date" : "2014-11-24T07:30:55",
+          "permit_end_date" : "2014-12-05T00:00:00",
+          "streetname" : "IRVING ST"
+        }
+         ]
+    http_version: 
+  recorded_at: Sat, 29 Nov 2014 18:16:29 GMT
 recorded_with: VCR 2.9.3

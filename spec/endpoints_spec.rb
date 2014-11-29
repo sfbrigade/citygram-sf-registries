@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "street-use-permits" do
   context "the happy path" do
     it "returns valid geojson" do
-      VCR.use_cassette('street_user_permit_happy_path', :record => :new_episodes) do
+      VCR.use_cassette('street_use_permit_happy_path', :record => :new_episodes) do
         get '/street-use-permits'
         expect(last_response.body).to be_valid_geojson
       end
