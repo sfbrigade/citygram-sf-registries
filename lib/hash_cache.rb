@@ -1,4 +1,5 @@
 class HashCache
+  attr_reader :cache
 
   def initialize
     @cache = {}
@@ -7,6 +8,10 @@ class HashCache
   def fetch(key, &payload)
     return @cache[key] if @cache.has_key? key
 
-    @cache[key] = yield payload
+    result = yield payload
+
+    unless result.nil?
+      @cache[key] = result
+    end
   end
 end
