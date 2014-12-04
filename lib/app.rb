@@ -12,7 +12,8 @@ Geocoder.configure({
 get '/' do
 	content_type :html
 	response = '<a href="'+request.url+'tree-planting">' + request.url + 'tree-planting</a><br/>'
-	response << '<a href="'+request.url+'tow-away-zones">' + request.url + 'tow-away-zones'
+	response << '<a href="'+request.url+'tow-away-zones">' + request.url + 'tow-away-zones</a><br />'
+  response << '<a href="'+request.url+'street-use-permits">' + request.url + 'street-use-permits</a><br />'
 end
 
 get '/tree-planting' do
