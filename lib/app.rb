@@ -1,5 +1,6 @@
 require File.join(File.dirname(__FILE__), 'hash_cache')
 require File.join(File.dirname(__FILE__), 'street_use_permit')
+require File.join(File.dirname(__FILE__), 'food_truck_permit')
 require 'faraday'
 require 'sinatra'
 require 'geocoder'
@@ -14,6 +15,7 @@ get '/' do
 	response = '<a href="'+request.url+'tree-planting">' + request.url + 'tree-planting</a><br/>'
 	response << '<a href="'+request.url+'tow-away-zones">' + request.url + 'tow-away-zones</a><br />'
   response << '<a href="'+request.url+'street-use-permits">' + request.url + 'street-use-permits</a><br />'
+  response << '<a href="'+request.url+'food-truck-permits">' + request.url + 'food-truck-permits</a><br />'
 end
 
 get '/tree-planting' do
@@ -109,4 +111,21 @@ get '/street-use-permits' do
     [503, "Error with geocoding service"]
   end
 
+end
+
+get '/food-truck-permits' do
+  connection = Faraday.new(:url => FoodTruckPermit.query_url)
+
+  # Query the data.sfgov.org endpoint
+  response = connection.get
+  # Parse the json response
+  collection = JSON.parse(response.body)
+
+  # Build our features
+  features = collection.map do |record|
+    FoodTruckPermit.new(record).as_geojson_feature
+  end.compact
+
+  content_type :json
+  JSON.generate('type' => 'FeatureCollection', 'features' => features)
 end
