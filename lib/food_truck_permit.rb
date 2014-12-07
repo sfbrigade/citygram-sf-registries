@@ -14,7 +14,7 @@ CFA
     url.query = Faraday::Utils.build_query(
       '$order' => 'approved DESC',
       '$limit' => 100,
-      '$where' => "approved > '#{(DateTime.now - 70).iso8601}'"
+      '$where' => "approved > '#{(DateTime.now - 7).iso8601}'"
     )
     url.to_s
   end
