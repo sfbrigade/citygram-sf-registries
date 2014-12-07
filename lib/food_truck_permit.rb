@@ -38,7 +38,7 @@ CFA
   def location_description
     str = @record['locationdescription'].dup
     str.gsub!(':', ',').gsub!('\\','/')
-    str.gsub(/\b([A-Z]+)\b/) do |match|
+    str.gsub(/\b([A-Z]+)\b|\b\d+([A-Z]+)/) do |match|
       "#{match[0].upcase}#{match[1..-1].downcase}"
     end
   end
