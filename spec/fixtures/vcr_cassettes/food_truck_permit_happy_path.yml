@@ -1,0 +1,492 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://data.sfgov.org/resource/rqzj-sfat.json?$limit=100&$order=approved%20DESC&$where=approved%20%3E%20'2014-09-27T21:37:14-08:00'
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 07 Dec 2014 05:37:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Last-Modified:
+      - Sat, 06 Dec 2014 08:17:45 PST
+      X-Soda2-Warning:
+      - X-SODA2-Fields, X-SODA2-Types, and X-SODA2-Legacy-Types are deprecated
+      X-Soda2-Fields:
+      - '["location","expirationdate","permit","block","received","facilitytype","locationdescription","approved","fooditems","longitude",":updated_at","status","blocklot","noisent","cnn","priorpermit","schedule","address","applicant","lot",":id","latitude","objectid",":created_at","y","x"]'
+      X-Soda2-Types:
+      - '["location","calendar_date","text","text","text","text","text","calendar_date","text","number","meta_data","text","text","calendar_date","number","number","text","text","text","text","meta_data","number","number","meta_data","number","number"]'
+      X-Soda2-Legacy-Types:
+      - 'true'
+      X-Socrata-Region:
+      - production
+      Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.403952784111",
+            "latitude" : "37.7662174644741"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0002",
+          "block" : "3935",
+          "received" : "Jan 24 2014  9:13AM",
+          "facilitytype" : "Truck",
+          "blocklot" : "3935005",
+          "locationdescription" : "16TH ST: KANSAS ST to VERMONT ST (1700 - 1799)",
+          "cnn" : "711000",
+          "priorpermit" : "0",
+          "approved" : "2014-12-02T12:04:27",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0002&ExportPDF=1&Filename=14MFF-0002_schedule.pdf",
+          "address" : "1700 16TH ST",
+          "applicant" : "Tres Agaves Mexican Kitchen & Tequila Lounge LLC. dba Tres Truck",
+          "lot" : "005",
+          "fooditems" : "Multiple Trucks - Everything",
+          "longitude" : "-122.403952784121",
+          "latitude" : "37.76621745068",
+          "objectid" : "512358",
+          "y" : "2107057.15",
+          "x" : "6011356.434"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.402136376169",
+            "latitude" : "37.7654597512631"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0002",
+          "block" : "3956",
+          "received" : "Jan 24 2014  9:13AM",
+          "facilitytype" : "Truck",
+          "blocklot" : "3956025",
+          "locationdescription" : "RHODE ISLAND ST: 16TH ST to 17TH ST (300 - 399)",
+          "cnn" : "10995000",
+          "priorpermit" : "0",
+          "approved" : "2014-12-02T12:04:27",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0002&ExportPDF=1&Filename=14MFF-0002_schedule.pdf",
+          "address" : "301 RHODE ISLAND ST",
+          "applicant" : "Tres Agaves Mexican Kitchen & Tequila Lounge LLC. dba Tres Truck",
+          "lot" : "025",
+          "fooditems" : "Multiple Trucks - Everything",
+          "longitude" : "-122.402136376179",
+          "latitude" : "37.7654597374682",
+          "objectid" : "512356",
+          "y" : "2106770.632",
+          "x" : "6011875.761"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.390975379567",
+            "latitude" : "37.7492558733397"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0020",
+          "block" : "4352",
+          "received" : "Mar 11 2014 12:43PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "4352007",
+          "locationdescription" : "CESAR CHAVEZ ST: INDIANA ST to IOWA ST (1300 - 1399)",
+          "cnn" : "2471000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-25T15:32:56",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0020&ExportPDF=1&Filename=14MFF-0020_schedule.pdf",
+          "address" : "1301 CESAR CHAVEZ ST",
+          "applicant" : "Bay Area Mobile Catering, Inc. dba. Taqueria Angelica's",
+          "lot" : "007",
+          "fooditems" : "Tacos: Burritos: Tortas: Quesadillas: Sodas: Chips: Candy",
+          "longitude" : "-122.390975379577",
+          "latitude" : "37.7492558595291",
+          "objectid" : "525590",
+          "y" : "2100806.30269",
+          "x" : "6014982.06972"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.427110643945",
+            "latitude" : "37.7683202633027"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "3535",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "3535001",
+          "locationdescription" : "14TH ST: DOLORES ST intersection",
+          "cnn" : "25871000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "2001 MARKET ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "001",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.427110643955",
+          "latitude" : "37.7683202495106",
+          "objectid" : "597859",
+          "y" : "2107959.664",
+          "x" : "6004679.693"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.425161376348",
+            "latitude" : "37.7644595352382"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "3567",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "3567039",
+          "locationdescription" : "16TH ST: SPENCER ST to DOLORES ST (3220 - 3299)",
+          "cnn" : "736000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "3253 16TH ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "039",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.425161376358",
+          "latitude" : "37.7644595214424",
+          "objectid" : "597855",
+          "y" : "2106542.595",
+          "x" : "6005214.088"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.384530734213",
+            "latitude" : "37.7550307405717"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "4232",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "4232010",
+          "locationdescription" : "23RD ST: END to ILLINOIS ST (100 - 699)",
+          "cnn" : "1232000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "401 23RD ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "010",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.384530734223",
+          "latitude" : "37.7550307267667",
+          "objectid" : "597857",
+          "y" : "2102871.037",
+          "x" : "6016887.317"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.427110643945",
+            "latitude" : "37.7683202633027"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "3535",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "3535001",
+          "locationdescription" : "DOLORES ST: 14TH ST intersection",
+          "cnn" : "25871000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "2001 MARKET ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "001",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.427110643955",
+          "latitude" : "37.7683202495106",
+          "objectid" : "597859",
+          "y" : "2107959.664",
+          "x" : "6004679.693"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.437331607831",
+            "latitude" : "37.7757743821951"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "1202",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "1202002D",
+          "locationdescription" : "GROVE ST: SCOTT ST to DIVISADERO ST (1200 - 1299)",
+          "cnn" : "6563000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "1265 GROVE ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "002D",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.437331607841",
+          "latitude" : "37.7757743684103",
+          "objectid" : "597852",
+          "y" : "2110734.277",
+          "x" : "6001782.163"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.440731162101",
+            "latitude" : "37.7752901561049"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "1200",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "1200015",
+          "locationdescription" : "GROVE ST: BRODERICK ST to BAKER ST (1400 - 1499)",
+          "cnn" : "6565000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "1477 GROVE ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "015",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.440731162111",
+          "latitude" : "37.7752901423195",
+          "objectid" : "597854",
+          "y" : "2110578.354",
+          "x" : "6000796.184"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.429511176337",
+            "latitude" : "37.7666247865094"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "3543",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "3543003B",
+          "locationdescription" : "MARKET ST: CHURCH ST to 15TH ST (2101 - 2195) -- SOUTH --",
+          "cnn" : "8764101",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "2145 MARKET ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "003B",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.429511176347",
+          "latitude" : "37.7666247727157",
+          "objectid" : "597856",
+          "y" : "2107356.733",
+          "x" : "6003973.245"
+        }
+        , {
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "3513",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "3513007",
+          "locationdescription" : "OTIS ST: GOUGH ST \\ MCCOPPIN ST to 13TH ST \\ DUBOCE AVE \\ HWY 101 NORTHBOUND RAMP \\ MISSION ST (100 - 199)",
+          "cnn" : "10048000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "170 OTIS ST",
+          "applicant" : "BH & MT LLC",
+          "lot" : "007",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "objectid" : "597858"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.446721633162",
+            "latitude" : "37.7839220838884"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0132",
+          "block" : "1072",
+          "received" : "Nov  7 2014  1:03PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "1072001",
+          "locationdescription" : "PRESIDIO AVE: POST ST to GEARY BLVD (900 - 999)",
+          "cnn" : "10770000",
+          "priorpermit" : "1",
+          "approved" : "2014-11-07T13:08:24",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0132&ExportPDF=1&Filename=14MFF-0132_schedule.pdf",
+          "address" : "949 PRESIDIO AVE",
+          "applicant" : "BH & MT LLC",
+          "lot" : "001",
+          "fooditems" : "Cold Truck: Breakfast: Sandwiches: Salads: Pre-Packaged Snacks: Beverages",
+          "longitude" : "-122.446721633172",
+          "latitude" : "37.7839220701115",
+          "objectid" : "597853",
+          "y" : "2113756.702",
+          "x" : "5999130.566"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.382464971127",
+            "latitude" : "37.7391114435654"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0028",
+          "block" : "5237",
+          "received" : "Mar 13 2014 11:01AM",
+          "facilitytype" : "Truck",
+          "blocklot" : "5237033",
+          "locationdescription" : "EVANS AVE: KEITH ST to MENDELL ST (1201 - 1399) -- SOUTH --",
+          "cnn" : "5331101",
+          "priorpermit" : "1",
+          "approved" : "2014-10-30T09:32:55",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0028&ExportPDF=1&Filename=14MFF-0028_schedule.pdf",
+          "address" : "1275 EVANS AVE",
+          "applicant" : "Tacos Rodriguez",
+          "lot" : "033",
+          "fooditems" : "Tacos: burritos: quesadillas: soda & water",
+          "longitude" : "-122.382464971136",
+          "latitude" : "37.739111429745",
+          "objectid" : "588597",
+          "y" : "2097063.665",
+          "x" : "6017367.817"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.401172335377",
+            "latitude" : "37.740994748821"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0028",
+          "block" : "5590A",
+          "received" : "Mar 13 2014 11:01AM",
+          "facilitytype" : "Truck",
+          "blocklot" : "5590A008",
+          "locationdescription" : "OAKDALE AVE: INDUSTRIAL ST \\ SELBY ST to TOLAND ST (2100 - 2199)",
+          "cnn" : "9794000",
+          "priorpermit" : "1",
+          "approved" : "2014-10-30T09:32:55",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0028&ExportPDF=1&Filename=14MFF-0028_schedule.pdf",
+          "address" : "2198 OAKDALE AVE",
+          "applicant" : "Tacos Rodriguez",
+          "lot" : "008",
+          "fooditems" : "Tacos: burritos: quesadillas: soda & water",
+          "longitude" : "-122.401172335386",
+          "latitude" : "37.7409947350024",
+          "objectid" : "526070",
+          "y" : "2097858.615",
+          "x" : "6011973.411"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.40094044068",
+            "latitude" : "37.7904851598986"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0028",
+          "block" : "0289",
+          "received" : "Mar 13 2014 11:01AM",
+          "facilitytype" : "Truck",
+          "blocklot" : "0289003",
+          "locationdescription" : "SANSOME ST: SUTTER ST to BUSH ST (1 - 99)",
+          "cnn" : "11542000",
+          "priorpermit" : "1",
+          "approved" : "2014-10-30T09:32:55",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0028&ExportPDF=1&Filename=14MFF-0028_schedule.pdf",
+          "address" : "1 SANSOME ST",
+          "applicant" : "Tacos Rodriguez",
+          "lot" : "003",
+          "fooditems" : "Tacos: burritos: quesadillas: soda & water",
+          "longitude" : "-122.40094044069",
+          "latitude" : "37.790485146128",
+          "objectid" : "526069",
+          "y" : "2115874.016",
+          "x" : "6012406.465"
+        }
+        , {
+          "location" : {
+            "needs_recoding" : false,
+            "longitude" : "-122.406736029895",
+            "latitude" : "37.7387268178079"
+          },
+          "status" : "APPROVED",
+          "expirationdate" : "2015-03-15T00:00:00",
+          "permit" : "14MFF-0066",
+          "block" : "5607",
+          "received" : "Mar 18 2014  1:10PM",
+          "facilitytype" : "Truck",
+          "blocklot" : "5607038",
+          "locationdescription" : "BAY SHORE BLVD: WATERLOO ST to MARENGO ST (501 - 559) -- EAST --",
+          "cnn" : "2801102",
+          "priorpermit" : "0",
+          "approved" : "2014-10-22T15:58:52",
+          "schedule" : "http://bsm.sfdpw.org/PermitsTracker/reports/report.aspx?title=schedule&report=rptSchedule&params=permit=14MFF-0066&ExportPDF=1&Filename=14MFF-0066_schedule.pdf",
+          "address" : "531 BAY SHORE BLVD",
+          "applicant" : "La Jefa",
+          "lot" : "038",
+          "fooditems" : "Tacos: burritos: quesadillas: tortas: nachos (refried beans: cheese sauce: salsa fresca): carnes (beef: chicken: marinated pork: fried pork): canned beans: rice: sodas: horchata drinks.",
+          "longitude" : "-122.406736029905",
+          "latitude" : "37.7387268039871",
+          "objectid" : "527194",
+          "y" : "2097065.717",
+          "x" : "6010348.157"
+        }
+         ]
+    http_version: 
+  recorded_at: Sun, 07 Dec 2014 05:37:15 GMT
+recorded_with: VCR 2.9.3
