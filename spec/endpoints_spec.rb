@@ -14,3 +14,14 @@ describe "street-use-permits" do
     it "returns a 503 status"
   end
 end
+
+describe "food-truck-permits" do
+  context "the happy path" do
+    it "returns valid geojson" do
+      VCR.use_cassette('food_truck_permit_happy_path', :match_requests_on => [:host, :path]) do
+        get '/food-truck-permits'
+        expect(last_response.body).to be_valid_geojson
+      end
+    end
+  end
+end
