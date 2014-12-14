@@ -38,17 +38,17 @@ describe NewBusinessLocation do
   describe "#formatted_street_address" do
     context "the address is in SF" do
       it "returns the street address" do
-      end
-
-      it "returns the address with sane capitalization" do
+        new_business_location = NewBusinessLocation.new(api_response)
+        expect(new_business_location.formatted_street_address).to eq("1664 LARKIN ST")
       end
     end
 
     context "the address is outside SF" do
       it "returns the street address along with the city & state" do
-      end
-
-      it "returns the address with sane capitaliztion" do
+        api_response2 = api_response
+        api_response2["city"] = "SAN PABLO"
+        new_business_location = NewBusinessLocation.new(api_response2)
+        expect(new_business_location.formatted_street_address).to eq("1664 LARKIN ST, SAN PABLO, CA")
       end
     end
   end
