@@ -128,3 +128,20 @@ get '/food-truck-permits' do
   content_type :json
   JSON.generate('type' => 'FeatureCollection', 'features' => features)
 end
+
+get '/new-business-locations' do
+  connection = Faraday.new(:url => NewBusinessLocation.query_url)
+
+  # Query the data.sfgov.org endpoint
+  response = connection.get
+  # Parse the json response
+  collection = JSON.parse(response.body)
+
+  # Build our features
+  features = collection.map do |record|
+    NewBusinessLocation.new(record).as_geojson_feature
+  end.compact
+
+  content_type :json
+  JSON.generate('type' => 'FeatureCollection', 'features' => features)
+end
