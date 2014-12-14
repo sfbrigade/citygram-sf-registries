@@ -23,18 +23,11 @@ CFA
 
   def fancy_title
     title_pieces = {
-      :dba_name => titleize(@record['dba_name']),
-      :street_address => titleize(formatted_street_address)
+      :dba_name => Utils.titleize(@record['dba_name']),
+      :street_address => Utils.titleize(formatted_street_address)
     }
 
     TITLE_TEMPLATE % title_pieces
-  end
-
-  # Poor man's titlecase (without including active_support)
-  def titleize(str)
-    str.gsub(/\b([A-Za-z])+|\b\d+[A-Za-z]{2}\b/) do |match|
-      "#{match[0].upcase}#{match[1..-1].downcase}"
-    end
   end
 
   def formatted_street_address
