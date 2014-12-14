@@ -11,11 +11,9 @@ Geocoder.configure({
 })
 
 get '/' do
+  endpoints = %w[tree-planting tow-away-zones street-use-permits food-truck-permits new-business-locations]
 	content_type :html
-	response = '<a href="'+request.url+'tree-planting">' + request.url + 'tree-planting</a><br/>'
-	response << '<a href="'+request.url+'tow-away-zones">' + request.url + 'tow-away-zones</a><br />'
-  response << '<a href="'+request.url+'street-use-permits">' + request.url + 'street-use-permits</a><br />'
-  response << '<a href="'+request.url+'food-truck-permits">' + request.url + 'food-truck-permits</a><br />'
+  endpoints.collect{ |ep| "<a href='#{request.url}#{ep}'>#{request.url}#{ep}</a>" }.join("<br />")
 end
 
 get '/tree-planting' do
