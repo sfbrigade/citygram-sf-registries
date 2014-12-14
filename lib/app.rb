@@ -1,6 +1,5 @@
+Dir[File.join(File.dirname(__FILE__), 'adapters', '*.rb')].each { |file| require file }
 require File.join(File.dirname(__FILE__), 'hash_cache')
-require File.join(File.dirname(__FILE__), 'street_use_permit')
-require File.join(File.dirname(__FILE__), 'food_truck_permit')
 require 'faraday'
 require 'sinatra'
 require 'geocoder'
