@@ -1,6 +1,6 @@
+Dir[File.join(File.dirname(__FILE__), 'adapters', '*.rb')].each { |file| require file }
 require File.join(File.dirname(__FILE__), 'hash_cache')
-require File.join(File.dirname(__FILE__), 'street_use_permit')
-require File.join(File.dirname(__FILE__), 'food_truck_permit')
+require File.join(File.dirname(__FILE__), 'utils')
 require 'faraday'
 require 'sinatra'
 require 'geocoder'
@@ -11,11 +11,9 @@ Geocoder.configure({
 })
 
 get '/' do
+  endpoints = %w[tree-planting tow-away-zones street-use-permits food-truck-permits new-business-locations]
 	content_type :html
-	response = '<a href="'+request.url+'tree-planting">' + request.url + 'tree-planting</a><br/>'
-	response << '<a href="'+request.url+'tow-away-zones">' + request.url + 'tow-away-zones</a><br />'
-  response << '<a href="'+request.url+'street-use-permits">' + request.url + 'street-use-permits</a><br />'
-  response << '<a href="'+request.url+'food-truck-permits">' + request.url + 'food-truck-permits</a><br />'
+  endpoints.collect{ |ep| "<a href='#{request.url}#{ep}'>#{request.url}#{ep}</a>" }.join("<br />")
 end
 
 get '/tree-planting' do
@@ -124,6 +122,23 @@ get '/food-truck-permits' do
   # Build our features
   features = collection.map do |record|
     FoodTruckPermit.new(record).as_geojson_feature
+  end.compact
+
+  content_type :json
+  JSON.generate('type' => 'FeatureCollection', 'features' => features)
+end
+
+get '/new-business-locations' do
+  connection = Faraday.new(:url => NewBusinessLocation.query_url)
+
+  # Query the data.sfgov.org endpoint
+  response = connection.get
+  # Parse the json response
+  collection = JSON.parse(response.body)
+
+  # Build our features
+  features = collection.map do |record|
+    NewBusinessLocation.new(record).as_geojson_feature
   end.compact
 
   content_type :json

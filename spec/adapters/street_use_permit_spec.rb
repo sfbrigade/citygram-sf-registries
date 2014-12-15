@@ -82,14 +82,6 @@ describe StreetUsePermit do
     end
   end
 
-  describe "#titleize" do
-    it "capitalizes the first letter of every word in the given string" do
-      street_use_permit = StreetUsePermit.new({},{})
-      test_string = "1531 HYDE STREET"
-      expect(street_use_permit.titleize(test_string)).to eq("1531 Hyde Street")
-    end
-  end
-
   describe "#date_cleanup" do
     it "formats date string from the source API" do
       street_use_permit = StreetUsePermit.new({},{})
