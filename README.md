@@ -20,7 +20,8 @@ All active endpoints can be seen at the [root (/)](https://citygram-sf-registrie
 
 ### General
 
- * DRY up `app.rb`. The class-based endpoints are ripe for DRYing.
+ * Write up how the class-based style works.
+ * Add more endpoints...
 
 ### Tow-away
 
