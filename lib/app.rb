@@ -88,8 +88,18 @@ end
 
 geocoder_cache = HashCache.new
 
-get '/street-use-permits' do
-  connection = Faraday.new(:url => StreetUsePermit.query_url)
+# Keys are the route, values are the class to use
+adapters = {
+  'street-use-permits' => StreetUsePermit,
+  'food-truck-permits' => FoodTruckPermit,
+  'new-business-location' => NewBusinessLocation
+}
+
+# Create routes for all the keys in the adapters hash.
+get /(#{adapters.keys.join('|')})/ do
+  adapter_class = adapters[params[:captures].first]
+
+  connection = Faraday.new(:url => adapter_class.query_url)
 
   begin
     # Query the data.sfgov.org endpoint
@@ -99,7 +109,7 @@ get '/street-use-permits' do
 
     # Build our features
     features = collection.map do |record|
-      StreetUsePermit.new(record, geocoder_cache).as_geojson_feature
+      adapter_class.new(record, geocoder_cache).as_geojson_feature
     end.compact
 
     content_type :json
@@ -111,36 +121,4 @@ get '/street-use-permits' do
 
 end
 
-get '/food-truck-permits' do
-  connection = Faraday.new(:url => FoodTruckPermit.query_url)
 
-  # Query the data.sfgov.org endpoint
-  response = connection.get
-  # Parse the json response
-  collection = JSON.parse(response.body)
-
-  # Build our features
-  features = collection.map do |record|
-    FoodTruckPermit.new(record).as_geojson_feature
-  end.compact
-
-  content_type :json
-  JSON.generate('type' => 'FeatureCollection', 'features' => features)
-end
-
-get '/new-business-locations' do
-  connection = Faraday.new(:url => NewBusinessLocation.query_url)
-
-  # Query the data.sfgov.org endpoint
-  response = connection.get
-  # Parse the json response
-  collection = JSON.parse(response.body)
-
-  # Build our features
-  features = collection.map do |record|
-    NewBusinessLocation.new(record).as_geojson_feature
-  end.compact
-
-  content_type :json
-  JSON.generate('type' => 'FeatureCollection', 'features' => features)
-end
