@@ -10,8 +10,18 @@ Geocoder.configure({
   :always_raise => [Geocoder::OverQueryLimitError],
 })
 
+geocoder_cache = HashCache.new
+
+# Registry of available adapter classes.
+# Keys are the route, values are the class to use.
+adapters = {
+  'street-use-permits' => StreetUsePermit,
+  'food-truck-permits' => FoodTruckPermit,
+  'new-business-location' => NewBusinessLocation
+}
+
 get '/' do
-  endpoints = %w[tree-planting tow-away-zones street-use-permits food-truck-permits new-business-locations]
+  endpoints = %w[tree-planting tow-away-zones] + adapters.keys
 	content_type :html
   endpoints.collect{ |ep| "<a href='#{request.url}#{ep}'>#{request.url}#{ep}</a>" }.join("<br />")
 end
@@ -86,14 +96,7 @@ get '/tow-away-zones' do
   JSON.pretty_generate('type' => 'FeatureCollection', 'features' => features)
 end
 
-geocoder_cache = HashCache.new
 
-# Keys are the route, values are the class to use
-adapters = {
-  'street-use-permits' => StreetUsePermit,
-  'food-truck-permits' => FoodTruckPermit,
-  'new-business-location' => NewBusinessLocation
-}
 
 # Create routes for all the keys in the adapters hash.
 get /(#{adapters.keys.join('|')})/ do
