@@ -19,7 +19,7 @@ CFA
     url.to_s
   end
 
-  def initialize(record)
+  def initialize(record, cache=nil)
     @record = record
   end
 
