@@ -29,7 +29,7 @@ describe CrimeIncident do
   describe "#fancy_title" do
     it "returns the nicely formatted title message" do
       crime_incident = CrimeIncident.new(api_response)
-      exp_title = "A crime incident happened near you on Feb 5, 2015 at 16th St / Mission St. The SFPD described it as a Battery with the following resolution: None."
+      exp_title = "A crime incident happened near you on Feb 5, 2015 at 16th St / Mission St. The SFPD described it as a Battery with the following resolution: none."
       expect(crime_incident.fancy_title).to eq(exp_title)
     end
   end
