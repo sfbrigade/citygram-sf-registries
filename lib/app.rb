@@ -17,7 +17,8 @@ geocoder_cache = HashCache.new
 adapters = {
   'street-use-permits' => StreetUsePermit,
   'food-truck-permits' => FoodTruckPermit,
-  'new-business-location' => NewBusinessLocation
+  'new-business-location' => NewBusinessLocation,
+  'crime-incidents' => CrimeIncident
 }
 
 get '/' do
