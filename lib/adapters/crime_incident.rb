@@ -1,4 +1,4 @@
-class CrimeIncident
+class CrimeIncident < SocrataBase
   SOCRATA_ENDPOINT = 'http://data.sfgov.org/resource/tmnf-yvry.json'
 
 # Text from https://github.com/citygram/citygram-services/issues/23
@@ -18,17 +18,6 @@ CFA
     url.to_s
   end
 
-  def initialize(record, cache=nil)
-    @record = record
-    @cache = cache
-  end
-
-  # Helper method to make the dates look nice in the "fancy title".
-  def date_cleanup(date_str)
-    date_str.gsub!(/T[\d\:]+$/,'')
-    Time.parse(date_str).strftime("%b %-e, %Y")
-  end
-
   def fancy_title
     # Apply any transformations needed to the text being sent to our
     # title "mad lib" above.
@@ -40,10 +29,6 @@ CFA
     }
 
     TITLE_TEMPLATE % title_pieces
-  end
-
-  def location
-    @record['location']
   end
 
   def as_geojson_feature

@@ -1,4 +1,4 @@
-class FoodTruckPermit
+class FoodTruckPermit < SocrataBase
   SOCRATA_ENDPOINT = 'http://data.sfgov.org/resource/rqzj-sfat.json'
 
   # Text from https://github.com/citygram/citygram-services/issues/8
@@ -17,10 +17,6 @@ CFA
       '$where' => "approved > '#{(DateTime.now - 7).iso8601}'"
     )
     url.to_s
-  end
-
-  def initialize(record, cache=nil)
-    @record = record
   end
 
   def fancy_title
@@ -46,10 +42,6 @@ CFA
   def food_items
     str = @record['fooditems'].dup
     str.gsub(":",",")
-  end
-
-  def location
-    @record['location']
   end
 
   def as_geojson_feature
