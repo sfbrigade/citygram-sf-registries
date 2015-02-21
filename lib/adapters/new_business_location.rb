@@ -1,4 +1,4 @@
-class NewBusinessLocation
+class NewBusinessLocation < SocrataBase
   SOCRATA_ENDPOINT = 'http://data.sfgov.org/resource/g8m3-pdis.json'
 
   # Text from https://github.com/citygram/citygram-services/issues/25
@@ -17,10 +17,6 @@ CFA
     url.to_s
   end
 
-  def initialize(record, cache=nil)
-    @record = record
-  end
-
   def fancy_title
     title_pieces = {
       :dba_name => Utils.titleize(@record['dba_name']),
@@ -36,10 +32,6 @@ CFA
     else
       "#{@record['full_business_address']}, #{@record['city']}, #{@record['state']}"
     end
-  end
-
-  def location
-    @record['location']
   end
 
   def as_geojson_feature

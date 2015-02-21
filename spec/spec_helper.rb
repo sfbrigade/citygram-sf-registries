@@ -3,6 +3,7 @@ require 'sinatra'
 require 'rack/test'
 require 'vcr'
 
+
 # Require any support files (i.e. custom matchers)
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each{ |f| require f }
 
