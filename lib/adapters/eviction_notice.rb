@@ -1,5 +1,5 @@
 class EvictionNotice < SocrataBase
-  SOCRATA_ENDPOINT = 'http://data.sfgov.org/resource/tmnf-yvry.json'
+  SOCRATA_ENDPOINT = 'http://data.sfgov.org/resource/5cei-gny5.json'
 
 TITLE_TEMPLATE = <<-CFA.gsub(/\s*\n/,' ').chomp(' ')
 An eviction notice was filed near you on %{date} for %{address}. The notice
@@ -30,7 +30,7 @@ CFA
     url.query = Faraday::Utils.build_query(
       '$order' => 'file_date DESC',
       '$limit' => 100,
-      '$where' => "file_date > '#{(DateTime.now - 19).iso8601}'"
+      '$where' => "file_date > '#{(DateTime.now - 45).iso8601}'"
     )
     url.to_s
   end
