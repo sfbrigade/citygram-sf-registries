@@ -15,7 +15,7 @@ CFA
     "access_denial" => "unlawful denial of access to unit",
     "unapproved_subtenant" => "the tenant had an unapproved subtenant",
     "owner_move_in" => "the owner is moving in",
-    "demolition" => "demolistion of the property",
+    "demolition" => "demolition of the property",
     "capital_improvement" => "a capital improvement",
     "substantial_rehab" => "substantial rehabilitaion",
     "ellis_act_withdrawal" => "an Ellis Act withdrawal (going out of business)",
