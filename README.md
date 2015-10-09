@@ -13,6 +13,7 @@ All active endpoints can be seen at the [root (/)](https://citygram-sf-registrie
 * [/food-truck-permits](https://citygram-sf-registries.herokuapp.com/food-truck-permits) - from [sfdata.gov](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat)
 * [/new-business-locations](https://citygram-sf-registries.herokuapp.com/new-business-locations) - from [sfdata.gov](https://data.sfgov.org/Economy-and-Community/Open-Business-Locations-San-Francisco/g8m3-pdis)
 * [/crime-incidents](https://citygram-sf-registries.herokuapp.com/crime-incidents) - from [sfdata.gov](http://data.sfgov.org/resource/tmnf-yvry)
+* [/eviction-notices](https://citygram-sf-registries.herokuapp.com/eviction-notices) - from [data.sfgov.org](https://data.sfgov.org/Housing-and-Buildings/Eviction-Notices/5cei-gny5)
 
 **Technical note:** The endpoints with the \* above are written in the style discussed in the [getting started guide](http://bit.ly/citygramsf). The others have been designed to be their own class (there is still work to do here).  Either method works fine.
 
